@@ -8,10 +8,10 @@
 module X264
   module Helpers
     def x264_packages
-      [
-        "libx264-85", 
-        "libx264-dev"
-      ]
+      value_for_platform(
+        [ "ubuntu" ] => { "default" => [ "libx264-dev" ] },
+        "default" => [ "libx264-85", "libx264-dev" ]
+        )
     end
   end
 end
